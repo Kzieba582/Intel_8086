@@ -1,0 +1,96 @@
+<!DOCTYPE HTML>
+<html lang="pl">
+
+<head>
+
+<meta charset="utf-8"/>
+<title>Projekt</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+<link rel="stylesheet" href="Intel_8086.css">
+
+</head>
+
+<body>
+
+	<header>
+
+       <h1>SYMULATOR PROCESORA INTEL 8086</h1>
+
+	</header>
+	
+
+	<div id="registers">
+		<h2>Registers</h2>
+		<form>
+			<label for="AX">AX:</label>
+			<input type="text" id="AX" name="AX" placeholder="5FB4" disabled style="text-align: center;"><br><br>
+			<label for="BX">BX:</label>
+			<input type="text" id="BX" name="BX" placeholder="AAAA" disabled style="text-align: center;"><br><br>
+			<label for="CX">CX:</label>
+			<input type="text" id="CX" name="CX" placeholder="ABCD" disabled style="text-align: center;"><br><br>
+			<label for="DX">DX:</label>
+			<input type="text" id="DX" name="DX" placeholder="EF12" disabled style="text-align: center;">
+		</form>	
+	</div>
+		<h2>Operators</h2>
+	<div class="MOV">
+		<form>
+			<label for="MOV">MOV</label>
+			<select id="register">
+				<option value="AX">AX</option>
+				<option value="BX">BX</option>
+				<option value="CX">CX</option>
+				<option value="DX">DX</option>
+			</select>
+			<input type="text" id="Nvalue" name="Nvalue" style="text-align: center;">
+			<input type="button" value="MOV" onclick="MOV()">
+		</form>
+	</div>
+	<div class="MOV">
+		<form>
+			<label for="MOV">MOV</label>
+			<select id="register3">
+				<option value="AX">AX</option>
+				<option value="BX">BX</option>
+				<option value="CX">CX</option>
+				<option value="DX">DX</option>
+			</select>
+			<select id="register2">
+				<option value="AX">AX</option>
+				<option value="BX">BX</option>
+				<option value="CX">CX</option>
+				<option value="DX">DX</option>
+			</select>
+			<input type="button" value="MOV" onclick="MOV2()">
+		</form>
+	</div>
+
+	<script>
+		function MOV() {
+			var i = document.getElementById("register").value
+			document.getElementById(i).placeholder = document.getElementById("Nvalue").value; 
+		}
+
+		function MOV2() {
+            var a = document.getElementById("register2").value
+			var b = document.getElementById("register3").value
+			document.getElementById(a).placeholder = document.getElementById(b).placeholder;
+		}
+	</script>
+
+	<footer>
+		<div><span>This wepsite was created as a study project. Can by used as template to other wepsites after consultation.<br>Author: Jakub Zięba</span></div>
+		<div class="span">
+			<span style="font-size: 10px;">The Copyright Clearance Center Privacy Policy was updated on May 27, 2020.
+             Materials available on copyright.com are protected by the copyright laws of the United States and other countries.
+             © 1995–2020 Copyright Clearance Center, Inc. All rights reserved.</span>
+		</div>
+	</footer>
+
+</body>
+
+
+
+
+</html>
